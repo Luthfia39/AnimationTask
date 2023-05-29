@@ -1,58 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:orientation="horizontal">
+    tools:context=".MainActivity">
+
     <LinearLayout
-        android:layout_width="match_parent"
+        android:id="@+id/left_trees"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:layout_weight="1">
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/sand">
         <ImageView
             android:id="@+id/left_tree_1"
-            android:layout_width="match_parent"
+            android:layout_width="137dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/tree"/>
+            android:src="@drawable/tree"  />
         <ImageView
             android:id="@+id/left_tree_2"
-            android:layout_width="match_parent"
+            android:layout_width="137dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/tree"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:background="@color/black"
-        android:orientation="vertical">
-        <ImageView
-            android:id="@+id/road"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/car_from_top"/>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:layout_weight="1">
-        <ImageView
-            android:id="@+id/right_tree_1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/tree"
-            android:layout_weight="1"/>
-        <ImageView
-            android:id="@+id/right_tree_2"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@drawable/tree"
-            android:layout_weight="1"/>
+            android:src="@drawable/tree" />
     </LinearLayout>
 
-</LinearLayout>
+    <RelativeLayout
+        android:id="@+id/layout_road"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        app:layout_constraintStart_toEndOf="@+id/left_trees">
+        <ImageView
+            android:id="@+id/road"
+            android:layout_width="137dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:src="@drawable/car_from_top" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@color/sand">
+        <ImageView
+            android:id="@+id/right_tree_1"
+            android:layout_width="137dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/tree" />
+        <ImageView
+            android:id="@+id/right_tree_2"
+            android:layout_width="137dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/tree" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/lets_go"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Let's Go!"
+        android:textColor="@color/text"
+        android:textStyle="bold"
+        android:textSize="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
